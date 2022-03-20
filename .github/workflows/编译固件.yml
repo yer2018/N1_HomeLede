@@ -68,7 +68,7 @@ jobs:
         cd $GITHUB_WORKSPACE/openwrt && ls
         exit
 
-    - name: Prepare feeds
+    - name: 安装更新 feeds
       run: |
         #DIY
         cd openwrt
@@ -79,7 +79,7 @@ jobs:
         sed -i '35a ./feeds/luci/themes/luci-theme-argon' prepareCompile.sh
         ./prepareCompile.sh
         
-    - name: Load custom configuration
+    - name: 加载自定义脚本
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config

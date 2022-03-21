@@ -77,6 +77,7 @@ jobs:
         sed -i '/strongswanInDocker/s/^\(.*\)$/#\1/' feeds.conf.default
         echo "src-git amlogic https://github.com/ophub/luci-app-amlogic.git" >> feeds.conf.default
         sed -i '35a ./feeds/luci/themes/luci-theme-argon' prepareCompile.sh
+        sed -i 's/homelede\/openwrt-passwall.git/xiaorouji\/openwrt-passwall.git/' feeds.conf.default
         ./prepareCompile.sh
         
     - name: 加载自定义脚本

@@ -126,8 +126,8 @@ wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_Dai
 #curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/server.crt -o $NAME/core/server.crt
 #curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/server.key -o $NAME/core/server.key
 
-sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+#sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+#sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 #rm -rf feeds/pw/
 #git clone -b v2021.10.03 https://github.do/https://github.com/homelede/openwrt-passwall.git feeds/pw

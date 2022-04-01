@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: 0 16 */2 * *
+    - cron: 0 12 */2 * *
 
 env:
   REPO_URL: https://github.com/xiaoqingfengATGH/HomeLede.git

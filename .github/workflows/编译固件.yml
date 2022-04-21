@@ -73,7 +73,7 @@ jobs:
         #DIY
         cd openwrt
         sed -i '/infinityfreedom/s/^\(.*\)$/#\1/' feeds.conf.default
-        sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
+        #sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
         sed -i '/strongswanInDocker/s/^\(.*\)$/#\1/' feeds.conf.default
         echo "src-git amlogic https://github.com/ophub/luci-app-amlogic.git" >> feeds.conf.default
         ./prepareCompile.sh

@@ -11,13 +11,13 @@
 #
 
 ## 解除系统限制
-#ulimit -u 10000
-#ulimit -n 4096
-#ulimit -d unlimited
-#ulimit -m unlimited
-#ulimit -s unlimited
-#ulimit -t unlimited
-#ulimit -v unlimited
+ulimit -u 10000
+ulimit -n 4096
+ulimit -d unlimited
+ulimit -m unlimited
+ulimit -s unlimited
+ulimit -t unlimited
+ulimit -v unlimited
 
 ######## 备用（暂不生效） ########
 # 修改IP项的EOF于EOF之间请不要插入其他扩展代码，可以删除或注释里面原本的代码

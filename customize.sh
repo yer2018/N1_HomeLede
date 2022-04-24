@@ -133,3 +133,6 @@ wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_Dai
 #git clone -b v2021.10.03 https://github.do/https://github.com/homelede/openwrt-passwall.git feeds/pw
 #rm -rf feeds/pw/chinadns-ng/
 
+#bash.bashrc
+echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc
+echo 'alias ll="ls -lhA"' >> package/base-files/files/etc/bash.bashrc

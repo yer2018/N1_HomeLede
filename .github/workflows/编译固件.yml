@@ -62,11 +62,16 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
 
     - name: 克隆源码
+      #run: |
+        #git clone $REPO_URL openwrt
+        #echo $GITHUB_WORKSPACE
+        #cd $GITHUB_WORKSPACE/openwrt && ls
+        #exit
+      working-directory: /workdir
       run: |
+        df -hT $PWD
         git clone $REPO_URL openwrt
-        echo $GITHUB_WORKSPACE
-        cd $GITHUB_WORKSPACE/openwrt && ls
-        exit
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 安装更新 feeds
       run: |

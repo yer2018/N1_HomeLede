@@ -136,3 +136,11 @@ wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_Dai
 #bash.bashrc
 echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc
 echo 'alias ll="ls -lhA"' >> package/base-files/files/etc/bash.bashrc
+
+#crontabs
+mkdir -p package/base-files/files/etc/crontabs/
+echo "0 6 1 * * /etc/AdGuardHome/update.sh &> /dev/null" >> package/base-files/files/etc/crontabs/root
+echo "0 0 * * * sh /usr/share/jd-dailybonus/newapp.sh -s" >> package/base-files/files/etc/crontabs/root
+
+
+

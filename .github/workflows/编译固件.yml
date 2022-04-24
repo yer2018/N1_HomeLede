@@ -20,7 +20,7 @@ on:
 env:
   REPO_URL: https://github.com/xiaoqingfengATGH/HomeLede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config
+  CONFIG_FILE: config_clash
   DIY_SH: customize.sh
   TZ: Asia/Shanghai
 
@@ -77,7 +77,7 @@ jobs:
         #DIY
         cd openwrt
         sed -i '/infinityfreedom/s/^\(.*\)$/#\1/' feeds.conf.default
-        sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
+        #sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
         sed -i '/strongswanInDocker/s/^\(.*\)$/#\1/' feeds.conf.default
         echo "src-git amlogic https://github.com/ophub/luci-app-amlogic.git" >> feeds.conf.default
         ./prepareCompile.sh
@@ -132,7 +132,7 @@ jobs:
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          ### **适用于Amlogic盒子的OpenWrt固件**
+          ### **适用于N1盒子的OpenWrt固件**
           * **固件信息：**
           默认IP: 10.10.10.100
           默认用户名: root

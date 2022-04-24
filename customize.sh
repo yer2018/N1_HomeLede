@@ -129,9 +129,10 @@ rm -rf feeds/xiaoqingfeng/luci-app-adguardhome/root/etc/AdGuardHome/startAdGuard
 #sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 #sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
-#rm -rf feeds/pw/
-#git clone -b v2021.10.03 https://github.do/https://github.com/homelede/openwrt-passwall.git feeds/pw
-#rm -rf feeds/pw/chinadns-ng/
+sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i 's#opt/kernel#kernel#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i 's#5.4#5.17#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 #bash.bashrc
 echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc

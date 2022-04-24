@@ -112,7 +112,10 @@ jobs:
 
     - name: 检查磁盘空间
       if: (!cancelled())
-      run: df -hT
+      run: ｜
+        df -hT
+        cd openwrt
+        ls -lhA ./bin/packages/
 
     - name: 打包内核
       uses: unifreq/openwrt_packit@master

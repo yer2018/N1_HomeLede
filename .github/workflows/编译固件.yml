@@ -60,31 +60,24 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
         # 清理多余文件，腾出磁盘空间
         docker rmi `docker images -q`
         sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell mysql* php* mssql-tools msodbcsql17 android*
         sudo rm -rf /etc/mysql /etc/php /swapfile
 
     - name: 克隆源码
-      #run: |
-        #git clone $REPO_URL openwrt
-        #echo $GITHUB_WORKSPACE
-        #cd $GITHUB_WORKSPACE/openwrt && ls
-        #exit
-      working-directory: /workdir
       run: |
-        df -hT $PWD
         git clone $REPO_URL openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        echo $GITHUB_WORKSPACE
+        cd $GITHUB_WORKSPACE/openwrt && ls
+        exit
 
     - name: 安装更新 feeds
       run: |
         #DIY
         cd openwrt
         sed -i '/infinityfreedom/s/^\(.*\)$/#\1/' feeds.conf.default
-        #sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
+        sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
         sed -i '/strongswanInDocker/s/^\(.*\)$/#\1/' feeds.conf.default
         echo "src-git amlogic https://github.com/ophub/luci-app-amlogic.git" >> feeds.conf.default
         ./prepareCompile.sh

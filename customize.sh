@@ -115,7 +115,7 @@ echo "#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/
 # 其他调整
 
 wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js -O feeds/xiaoqingfeng/luci-app-jd-dailybonus/root/usr/share/jd-dailybonus/JD_DailyBonus.js
-
+rm -rf feeds/xiaoqingfeng/luci-app-adguardhome/root/etc/AdGuardHome/startAdGuardHome.sh
 
 #NAME=$"package/small-package/luci-app-unblockneteasemusic/root/usr/share/unblockneteasemusic" && mkdir -p $NAME/core
 #curl 'https://api.github.com/repos/UnblockNeteaseMusic/server/commits?sha=enhanced&path=precompiled' -o commits.json

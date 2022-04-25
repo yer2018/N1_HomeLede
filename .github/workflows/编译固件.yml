@@ -23,7 +23,7 @@ env:
   CONFIG_FILE: config_clash
   DIY_SH: customize.sh
   TZ: Asia/Shanghai
-  UPLOAD_COWTRANSFER: ture
+  UPLOAD_COWTRANSFER: true
 
 jobs:
   build:

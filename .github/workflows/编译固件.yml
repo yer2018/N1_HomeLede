@@ -112,8 +112,8 @@ jobs:
 
     - name: 检查磁盘空间
       if: (!cancelled())
-      run: ｜
-        df -hT
+      run: |
+        df -Th
         cd openwrt
         ls -lhA ./bin/packages/
 

@@ -20,7 +20,7 @@ on:
 env:
   REPO_URL: https://github.com/xiaoqingfengATGH/HomeLede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config_clash
+  CONFIG_FILE: test.config
   DIY_SH: customize.sh
   TZ: Asia/Shanghai
   UPLOAD_COWTRANSFER: true

@@ -135,8 +135,8 @@ sed -i 's#opt/kernel#kernel#g' package/feeds/amlogic/luci-app-amlogic/root/etc/c
 sed -i 's#5.4#5.17#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 #bash.bashrc
-echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc
-echo 'alias ll="ls -lhA"' >> package/base-files/files/etc/bash.bashrc
+#echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc
+#echo 'alias ll="ls -lhA"' >> package/base-files/files/etc/bash.bashrc
 
 #crontabs
 mkdir -p package/base-files/files/etc/crontabs/

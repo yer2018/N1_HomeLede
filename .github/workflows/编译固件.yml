@@ -70,9 +70,11 @@ jobs:
       run: |
         git clone $REPO_URL openwrt
         echo $GITHUB_WORKSPACE
-        cd $GITHUB_WORKSPACE/files/etc/AdGuardHome
-        chmod a+x startAdGuardHome.sh
-        chmod a+x update.sh
+        cd $GITHUB_WORKSPACE/files/etc/AdGuardHome/
+        chmod u+x startAdGuardHome.sh
+        chmod u+x update.sh
+        cd $GITHUB_WORKSPACE/files/usr/bin/
+        chmod u+x chinadns-ng-update-list.sh
         cd $GITHUB_WORKSPACE/openwrt && ls
         exit
 

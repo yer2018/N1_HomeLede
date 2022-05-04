@@ -114,8 +114,8 @@ echo "#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/
 
 # 其他调整
 
-wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js -O feeds/xiaoqingfeng/luci-app-jd-dailybonus/root/usr/share/jd-dailybonus/JD_DailyBonus.js
-#rm -rf feeds/xiaoqingfeng/luci-app-adguardhome/root/etc/AdGuardHome/startAdGuardHome.sh
+#wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js -O feeds/xiaoqingfeng/luci-app-jd-dailybonus/root/usr/share/jd-dailybonus/JD_DailyBonus.js
+
 
 #NAME=$"package/small-package/luci-app-unblockneteasemusic/root/usr/share/unblockneteasemusic" && mkdir -p $NAME/core
 #curl 'https://api.github.com/repos/UnblockNeteaseMusic/server/commits?sha=enhanced&path=precompiled' -o commits.json
@@ -132,7 +132,7 @@ wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_Dai
 sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i 's#opt/kernel#kernel#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's#5.4#5.17#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i 's#5.4#5.15#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 #bash.bashrc
 #echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc

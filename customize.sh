@@ -47,6 +47,7 @@ echo "sed -i '4a /etc/init.d/hd-idle disable' /etc/rc.local" >> package/lean/def
 echo "sed -i '4a /etc/init.d/haproxy disable' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
 echo "sed -i '4a mount --make-shared /mnt/mmcblk2p4/' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
 echo "sed -i 's#/bin/login#/bin/login -f root#' /etc/config/ttyd" >> package/lean/default-settings/files/zzz-default-settings            # 设置ttyd免帐号登录，如若开启，进入OPENWRT后可能要重启一次才生效
+echo "[ -f /etc/docker/daemon.json ] && mv /etc/docker/daemon.json /etc/docker/daemon.json.bak" >> package/lean/default-settings/files/zzz-default-settings
 echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
 
 # Modify default PassWord

@@ -141,6 +141,7 @@ sed -i 's#5.4#5.15#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/aml
 #crontabs
 mkdir -p package/base-files/files/etc/crontabs/
 echo "0 6 1 * * /etc/AdGuardHome/update.sh &> /dev/null" >> package/base-files/files/etc/crontabs/root
+echo "0 */6 * * * [ -f /mnt/mmcblk2p4/AdGuardHome/data/querylog.json1 ] && rm -rf /mnt/mmcblk2p4/AdGuardHome/data/querylog.json >> package/base-files/files/etc/crontabs/root
 #echo "0 0 * * * sh /usr/share/jd-dailybonus/newapp.sh -s" >> package/base-files/files/etc/crontabs/root
 
 

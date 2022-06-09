@@ -98,7 +98,7 @@ echo "#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE" >> package/networ
 #svn co https://github.com/immortalwrt-collections/openwrt-gowebdav/trunk/gowebdav package/gowebdav
 #git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-clash package/feeds/luci/luci-app-clash
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-openclash package/feeds/luci/luci-app-openclash
 
 # 删除重复包
 

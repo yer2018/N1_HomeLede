@@ -19,7 +19,7 @@ now_ver="$(/usr/bin/AdGuardHome/AdGuardHome --version|awk {'print $4'})"
 #获取最新版本
 latest_ver="$(curl -L -k --retry 2 --connect-timeout 20 -o - https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest 2>/dev/null|grep -E 'tag_name' |grep -E 'v[0-9.]+' -o 2>/dev/null)"
 if [ "${latest_ver}"x != "${now_ver}"x ];then
-    cp -f /usr/bin/AdGuardHome/AdGuardHome /usr/bin/AdGuardHome/AdGuardHome.old
+    cp -f /usr/bin/AdGuardHome/AdGuardHome /usr/bin/AdGuardHome/AdGuardHome$now_ver
     $download
     if [ -f /usr/bin/AdGuardHome/AdGuardHome_linux_$os.tar.gz ];then
     cd /usr/bin/

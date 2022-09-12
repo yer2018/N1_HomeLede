@@ -99,6 +99,9 @@ echo "#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE" >> package/networ
 #git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 #svn co https://github.com/kenzok8/small-package/trunk/luci-app-openclash package/feeds/luci/luci-app-openclash
+#git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/feeds/luci/luci-app-unblockneteasemusic
+#svn co https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic-Go package/feeds/luci/UnblockNeteaseMusic-Go
+#svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic-go package/feeds/luci/luci-app-unblockneteasemusic-go
 
 # 删除重复包
 
@@ -111,14 +114,14 @@ echo "#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE" >> package/networ
 # rm -rf package/small-package/luci-app-koolproxyR
 # rm -rf package/small-package/luci-app-godproxy
 # rm -rf package/small-package/luci-app-argon-config
-
+# rm -rf package/feeds/luci/luci-app-unblockmusic
 
 # 其他调整
 
 #wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js -O feeds/xiaoqingfeng/luci-app-jd-dailybonus/root/usr/share/jd-dailybonus/JD_DailyBonus.js
 
 
-#NAME=$"package/small-package/luci-app-unblockneteasemusic/root/usr/share/unblockneteasemusic" && mkdir -p $NAME/core
+#NAME=$"package/luci-app-unblockneteasemusic/root/usr/share/unblockneteasemusic" && mkdir -p $NAME/core
 #curl 'https://api.github.com/repos/UnblockNeteaseMusic/server/commits?sha=enhanced&path=precompiled' -o commits.json
 #echo "$(grep sha commits.json | sed -n "1,1p" | cut -c 13-52)">"$NAME/core_local_ver"
 #curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/precompiled/app.js -o $NAME/core/app.js

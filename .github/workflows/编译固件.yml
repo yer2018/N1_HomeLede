@@ -51,7 +51,9 @@ jobs:
         echo "硬盘详情："
         df -Th
         CPU=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c |awk '{print $5}')
+        echo "CPU型号为 $CPU"
         if [ $CPU == "8272CL" ];then
+        echo "CPU型号为 $CPU 退出"
         exit
         fi
 

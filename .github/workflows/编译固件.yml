@@ -50,10 +50,10 @@ jobs:
         echo -e  "硬盘数量：$(ls /dev/sd* | grep -v [1-9] | wc -l) \n"
         echo "硬盘详情："
         df -Th
-        CPU=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c |awk '{print $5}')
-        echo "CPU型号为 $CPU"
-        if [ $CPU == "8272CL" ];then
-        echo "CPU型号为 $CPU 退出"
+        cpu=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c | awk '{print $5}')
+        echo "CPU型号为 $cpu"
+        if [ $cpu == "8272CL" ];then
+        echo "CPU型号为 $cpu 退出"
         exit
         fi
 

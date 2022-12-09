@@ -24,7 +24,6 @@ env:
   DIY_SH: customize.sh
   TZ: Asia/Shanghai
   UPLOAD_COWTRANSFER: false
-  cpu: $(cat /proc/cpuinfo | grep name | awk -F ":" '{print $2}' | uniq -c | awk '{print $5}')
 
 jobs:
   build:
@@ -55,7 +54,7 @@ jobs:
         echo "CPU型号为 $cpu"
         
     - name: 检查CPU
-      if: ( $cpu == "8272CL" )
+      if: ( `cat /proc/cpuinfo | grep name | awk -F ":" '{print $2}' | uniq -c | awk '{print $5}'` == "8272CL" )
       run: |
         echo "CPU型号为 $cpu 退出"
         exit

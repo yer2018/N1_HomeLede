@@ -51,6 +51,7 @@ jobs:
         echo "硬盘详情："
         df -Th
         cpu=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c | awk '{print $5}')
+        echo "CPU型号为 $cpu"
         test $cpu = "8272CL" && exit || echo "CPU型号为 $cpu"
 
     - name: 初始化编译环境

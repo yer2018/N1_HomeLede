@@ -105,12 +105,12 @@ jobs:
       id: package
       run: |
         cd openwrt
-        mkdir dl
-        wget https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        ls -lh dl
+        cd dl
+        wget https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz
+        ls -lh
 
 
     - name: 编译固件

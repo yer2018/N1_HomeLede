@@ -52,10 +52,12 @@ jobs:
         df -Th
         cpu=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c | awk '{print $5}')
         echo "CPU型号为 $cpu"
-        if [ $cpu == "8272CL" ];then
+        
+    - name: 检查CPU
+      if: ($cpu == "8272CL")
+      run: |
         echo "CPU型号为 $cpu 退出"
         exit
-        fi
 
     - name: 初始化编译环境
       env:

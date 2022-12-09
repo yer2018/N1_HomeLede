@@ -52,8 +52,9 @@ jobs:
         df -Th
         cpu=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c | awk '{print $5}')
         echo "CPU型号为 $cpu"
-        test $cpu = "8272CL" && sudo poweroff || echo "CPU型号为 $cpu"
-
+        test $cpu = "8272CL" && exit || echo "CPU型号为 $cpu"
+        sleep 3
+        test $cpu = "8272CL" && exit || echo "CPU型号为 $cpu"
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive

@@ -19,21 +19,6 @@ ulimit -s unlimited
 ulimit -t unlimited
 ulimit -v unlimited
 
-sed -i "/exit 0/d" package/lean/default-settings/files/zzz-default-settings
-echo "sed -i s/openwrt.org/www.baidu.com/g /etc/config/luci" >> package/lean/default-settings/files/zzz-default-settings
-#echo "sed -i '2a /etc/init.d/odhcpd disable' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
-#echo "sed -i '4a /etc/init.d/led disable' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
-#echo "sed -i '4a /etc/init.d/hd-idle disable' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
-#echo "sed -i '4a /etc/init.d/haproxy disable' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
-#echo "sed -i '4a mount --make-shared /mnt/mmcblk2p4/' /etc/rc.local" >> package/lean/default-settings/files/zzz-default-settings
-#echo "sed -i 's#/bin/login#/bin/login -f root#' /etc/config/ttyd" >> package/lean/default-settings/files/zzz-default-settings            # 设置ttyd免帐号登录，如若开启，进入OPENWRT后可能要重启一次才生效
-#echo "[ -f /etc/docker/daemon.json ] && mv /etc/docker/daemon.json /etc/docker/daemon.json.bak" >> package/lean/default-settings/files/zzz-default-settings
-echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
-
-# Modify default PassWord
-sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root:$1$a87b3JDA$O5S5vtQFGIL9deGI2KeBg1:0:0:99999:7:::/g' package/lean/default-settings/files/zzz-default-settings
-# Add ssh-rsa
-sed -i '40a echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5mxNSzSRs61tdDIp2GfqQRcj/e3XoMA8gicBF5J3Bwa6XgIjU9z5psi4JA6HJ3XxiEX32LCeluIiyj37WyyvxS1JOJB0FOPQFQ49kwfE3v9agRCdmqlQWV1/QTTFRbWBznY4u575x9TLWfnPEXwvqmG/Y+4farcWHlEqzgND56lrFmn6b6iKik+xbWtuQFVIktsy9hOTeWXS7jM1iaBo6QgEitni7SNhOQ+c4127wKeTXvVwU+FfWAI7X7OZeIPpvt6Syb4pzIZcNHdiAYzeCVeaE+9Lp+byYEFtjUpIjtHvpV4wvrVHbOaIjfxQBZ4v41W5heS8G3ljzlkU+Wb7eq9htN48RsPObzkuhnPkQeiV5DOI1O+twuWJ07pj/z96iAIeZMBJY77ezZi+ufDTKq4+rxjyexExEWGFkLsIuLNyuvT4RIysxrcR0Uf/TT8Xm2e8Li+Fbn/kKbgAQ2PfZdgi+y03s6lPPoOh1dqVINj3cHzimsKNKL5Jw/vGPjFE= ye@MacBook-Pro.local" > /etc/dropbear/authorized_keys' package/lean/default-settings/files/zzz-default-settings
 
 
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）

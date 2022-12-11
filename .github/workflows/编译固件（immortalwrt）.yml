@@ -11,7 +11,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   #REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config-imm
+  CONFIG_FILE: config-imm
   DIY_P2_SH: diy-part2_imm.sh
   TZ: Asia/Shanghai
 

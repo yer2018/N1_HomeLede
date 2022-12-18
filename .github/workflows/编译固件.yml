@@ -144,7 +144,7 @@ jobs:
         df -Th
 
     - name: 打包内核
-      uses: unifreq/openwrt_packit@master
+      uses: yer2018/openwrt_packit@master
       env:
         WHOAMI: Ye
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.tar.gz

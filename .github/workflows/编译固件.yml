@@ -50,11 +50,7 @@ jobs:
         echo -e  "硬盘数量：$(ls /dev/sd* | grep -v [1-9] | wc -l) \n"
         echo "硬盘详情："
         df -Th
-        cpu=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c | awk '{print $5}')
-        echo "CPU型号为 $cpu"
-        test $cpu = "8272CL" && exit || echo "CPU型号为 $cpu"
-        sleep 3
-        test $cpu = "8272CL" && exit || echo "CPU型号为 $cpu"
+        
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -94,7 +90,6 @@ jobs:
         cd openwrt
         sed -i '/infinityfreedom/s/^\(.*\)$/#\1/' feeds.conf.default
         #sed -i '/homeclash/s/^\(.*\)$/#\1/' feeds.conf.default
-        #sed -i 's/xiaoqingfengATGH\/homeclash.git/yer2018\/homeclash.git/g' feeds.conf.default
         sed -i '/strongswanInDocker/s/^\(.*\)$/#\1/' feeds.conf.default
         echo "src-git amlogic https://github.com/ophub/luci-app-amlogic.git" >> feeds.conf.default
         ./prepareCompile.sh

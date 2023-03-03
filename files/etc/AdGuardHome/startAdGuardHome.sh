@@ -5,12 +5,14 @@ if [ ! -L /usr/bin/AdGuardHome ];then
 fi
 if [ ! -f "/mnt/mmcblk2p4/AdGuardHome/AdGuardHome" ];then
     echo "nameserver 223.5.5.5" >> /etc/resolv.conf
+    echo "nameserver 8.8.4.4" >> /etc/resolv.conf
     wget-ssl --no-check-certificate -t 2 -T 20 https://static.adguard.com/adguardhome/release/AdGuardHome_linux_$os.tar.gz -O /usr/bin/AdGuardHome/AdGuardHome_linux_arm64.tar.gz
     cd /usr/bin/
     tar -zxf /usr/bin/AdGuardHome/AdGuardHome_linux_$os.tar.gz ./AdGuardHome/AdGuardHome
     rm -f /usr/bin/AdGuardHome/AdGuardHome_linux_$os.tar.gz
     /etc/init.d/AdGuardHome reload
     sed -i '/223.5.5.5/d' /etc/resolv.conf
+    sed -i '/8.8.4.4/d' /etc/resolv.conf
 fi
 
 ifconfig br-lan &> /dev/null

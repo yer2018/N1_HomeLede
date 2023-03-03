@@ -51,9 +51,9 @@ echo "sed -i s/openwrt.org/www.baidu.com/g /etc/config/luci" >> package/lean/def
 echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
 
 # Modify default PassWord
-sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root:$1$a87b3JDA$O5S5vtQFGIL9deGI2KeBg1:0:0:99999:7:::/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root:$1$.QWp3Sfb$BqubwqydcdzGBiOiwnHk/1:19419:0:99999:7:::/g' package/lean/default-settings/files/zzz-default-settings
 # Add ssh-rsa
-sed -i '40a echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5mxNSzSRs61tdDIp2GfqQRcj/e3XoMA8gicBF5J3Bwa6XgIjU9z5psi4JA6HJ3XxiEX32LCeluIiyj37WyyvxS1JOJB0FOPQFQ49kwfE3v9agRCdmqlQWV1/QTTFRbWBznY4u575x9TLWfnPEXwvqmG/Y+4farcWHlEqzgND56lrFmn6b6iKik+xbWtuQFVIktsy9hOTeWXS7jM1iaBo6QgEitni7SNhOQ+c4127wKeTXvVwU+FfWAI7X7OZeIPpvt6Syb4pzIZcNHdiAYzeCVeaE+9Lp+byYEFtjUpIjtHvpV4wvrVHbOaIjfxQBZ4v41W5heS8G3ljzlkU+Wb7eq9htN48RsPObzkuhnPkQeiV5DOI1O+twuWJ07pj/z96iAIeZMBJY77ezZi+ufDTKq4+rxjyexExEWGFkLsIuLNyuvT4RIysxrcR0Uf/TT8Xm2e8Li+Fbn/kKbgAQ2PfZdgi+y03s6lPPoOh1dqVINj3cHzimsKNKL5Jw/vGPjFE= ye@MacBook-Pro.local" > /etc/dropbear/authorized_keys' package/lean/default-settings/files/zzz-default-settings
+sed -i '40a echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDaC94zpxOIDSvXSYnZvxxBWB/Iw4LDL7jo6guAFKFJu+0oPJ73tdVoDf7szFZoqyLmmVQ/3dsa3BFyMM4dB5C51oK6TsHYwGh4m/0mfF4Rp7IFiaENijWdvkhZ9j4WSqonoKdyPzz0c3pycI53AdvgZFdM4EGrMrxMQmf/eXaRM75rrsTbWjkmVraPAiQ1m4hSePgq0kK9rh1qdg2P7TiTPiUH+UrG1WYdXq3taSTq1lY+ND5NgLxkmj6esZZzPH/4ddZIAlo7GvUBSIUDzeo7SKdThzdS4l/kIXBkrfvi1Pn3Cr+JP2DDbwsNFjV1ifeu8xLu56l0gPUP5/24HZm28UDSElBRX/uYmPtXt3eOArme/O/Zp61GKKbv2qirzctboZn7eteXqmKaXlBbsI9p3MjyfclFPQikdyUbVoT6XT4rU3XfprQYg9oZTJ8Grca2M1NrUHxnYSlhoEfD7gxSFwIzgkaOiaGcH9v1CKmNWVopbXFFsclJ1FhjjEB3wEM= ye@MacBook-Pro.local" > /etc/dropbear/authorized_keys' package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
@@ -134,10 +134,10 @@ echo "#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE" >> package/networ
 #sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 #sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
-sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's#opt/kernel#kernel#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's#5.4#5.15#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+#sed -i 's#https://github.com/breakings/OpenWrt#https://github.com/yer2018/Actions_OpenWrt-Amlogic#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+#sed -i 's#ARMv8#openwrt_armvirt#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+#sed -i 's#opt/kernel#kernel#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
+#sed -i 's#5.4#5.15#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 #bash.bashrc
 #echo 'alias ql="docker exec -it qinglong /bin/sh"' >> package/base-files/files/etc/bash.bashrc
@@ -146,6 +146,8 @@ sed -i 's#5.4#5.15#g' package/feeds/amlogic/luci-app-amlogic/root/etc/config/aml
 #crontabs
 mkdir -p package/base-files/files/etc/crontabs/
 echo "0 6 1 * * /etc/AdGuardHome/update.sh &> /dev/null" >> package/base-files/files/etc/crontabs/root
+echo "0 0 * * 0 /etc/init.d/smartdns restart &> /dev/null" >> package/base-files/files/etc/crontabs/root
+echo "0 0 * * 0 /usr/bin/chinadns-ng-daily.sh &> /dev/null" >> package/base-files/files/etc/crontabs/root
 #echo "0 */6 * * * [ -f /mnt/mmcblk2p4/AdGuardHome/data/querylog.json.1 ] && rm -rf /mnt/mmcblk2p4/AdGuardHome/data/querylog.json.1" >> package/base-files/files/etc/crontabs/root
 #echo "0 0 * * * sh /usr/share/jd-dailybonus/newapp.sh -s" >> package/base-files/files/etc/crontabs/root
 
